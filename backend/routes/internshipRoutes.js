@@ -1,0 +1,1 @@
+import express from "express"; import { createInternship, listInternships } from "../controllers/internshipController.js"; const router = express.Router(); router.post("/", createInternship); router.get("/", listInternships); export default router;

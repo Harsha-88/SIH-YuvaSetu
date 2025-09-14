@@ -1,0 +1,1 @@
+import express from "express"; import { getMatches } from "../controllers/matchController.js"; const router = express.Router(); router.post("/", getMatches); export default router;
