@@ -9,6 +9,20 @@ import studentRoutes from "./routes/studentRoutes.js";
 import internshipRoutes from "./routes/internshipRoutes.js";
 import matchRoutes from "./routes/matchRoutes.js";
 
+
+
+import cors from "cors";
+
+app.use(cors({
+  origin: "https://sih-yuvasetu-aicldwaja-harshas-projects-74c42ba7.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
+
+
+
+
 dotenv.config();
 connectDB();
 
@@ -28,5 +42,5 @@ app.use("/api/match", matchRoutes);
 
 app.get("/api/health", (req, res) => res.json({ status: "ok" }));
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT}`));
